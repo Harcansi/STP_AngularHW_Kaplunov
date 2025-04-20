@@ -1,0 +1,25 @@
+<div class="flex h-[100vh] w-[300px]"> <!-- Тут размеры... --->
+    <p-menu [model]="items" 
+            orientation="vertical"
+            class="flex p-4 bg-surface-0 dark:bg-surface-900">
+        <!-- Заголовок "Обслуживание рабочих месть" -->
+        <ng-template #submenuheader let-item>
+            <span class="flex text-primary font-bold text-lg text-center">
+                {{item.label}}
+            </span>
+        </ng-template>
+        <!-- Элемент списка, адаптивное добавление, согласно side-bar.items.items -->
+        <ng-template #item let-item>
+            <a  class="flex item-center py-2 px-4 cursor-pointer mb-2 gap-4"
+                [routerLink]="item.url">
+                <span class="inline-flex items-center justify-center rounded-full bg-primary text-primary-contrast">
+                    <i class="{{item.icon}} text-md"></i>
+                </span>
+                <span class="inline-flex flex-col gap-1">
+                    <span class="font-medium text-md text-surface-900 dark:text-surface-0">{{ item.label }}</span>
+                </span>
+            </a>
+        </ng-template>
+    </p-menu>
+</div>
+

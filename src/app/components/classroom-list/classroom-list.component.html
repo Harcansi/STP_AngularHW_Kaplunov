@@ -1,0 +1,11 @@
+<app-filterable-table 
+    [data]="items"
+    [columns]="displayedColumns"
+    [columnWidths]="columnWidths"
+    [headerNames]="headerNames"
+    [filterOptions]="departmentOptions"
+    [filterColumn]="'departmentName'"
+    [filterPlaceholder]="'Все кафедры'"
+    (filterChange)="onFilterChange($event)"
+    [selectableData]="'address'">
+</app-filterable-table>

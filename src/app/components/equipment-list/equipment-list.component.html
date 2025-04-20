@@ -1,0 +1,27 @@
+<p-panel styleClass="flex p-4 bg-surface-0 dark:bg-surface-900 h-full">
+    <div class="w-full overflow-hidden flex flex-column">
+        <p-table
+            [value]="items"
+            [scrollable]="true"
+            scrollHeight="90vh"
+            [tableStyle]="{'table-layout': 'fixed', 'min-width': '50rem'}"
+            selectionMode="single"
+            [(selection)]="selectedRow"
+            [dataKey]="selectableData">
+            <ng-template #header>
+                <tr>
+                    <th *ngFor="let col of columns" [style.width]="columnWidths[col]">
+                            {{getHeaderName(col)}}
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template #body let-rowData>
+                <tr [pSelectableRow]="rowData">
+                    <td *ngFor="let col of columns" [style.width]="columnWidths[col]">
+                        {{rowData[col]}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</p-panel>

@@ -1,0 +1,11 @@
+<app-filterable-table 
+    [data]="items"
+    [columns]="displayedColumns"
+    [columnWidths]="columnWidths"
+    [headerNames]="headerNames"
+    [filterOptions]="classroomOption"
+    [filterColumn]="'classroom'"
+    [filterPlaceholder]="'Все классы'"
+    (filterChange)="onFilterChange($event)"
+    [selectableData]="'ipAddress'">
+</app-filterable-table>
